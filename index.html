@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="搜索互联网档案馆和美国国会图书馆公开提供的免费影片，直接前往来源网站观看。"
+    />
+    <title>光影拾遗 · 免费影片发现</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="光影拾遗首页">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>光影拾遗</span>
+        </a>
+        <span class="topbar-note">公开馆藏 · 原站观看</span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">OPEN FILM DISCOVERY <span aria-hidden="true">/</span> 免费影片发现</p>
+            <h1 id="page-title">好电影，<br /><em>从这里找到。</em></h1>
+            <p class="hero-description">
+              探索公开可观看的经典电影与历史影像。搜索结果直接来自来源机构，点开即可前往原站。
+            </p>
+
+            <form id="search-form" class="search-form" role="search">
+              <label class="sr-only" for="search-input">搜索影片</label>
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input
+                id="search-input"
+                name="q"
+                type="search"
+                maxlength="80"
+                autocomplete="off"
+                placeholder="输入片名、人物或主题，英文关键词命中更多"
+              />
+              <button type="submit">搜索影片 <span aria-hidden="true">↗</span></button>
+            </form>
+
+            <div class="suggestions" aria-label="搜索示例">
+              <span>试试搜索</span>
+              <button type="button" data-query="Nosferatu">Nosferatu</button>
+              <button type="button" data-query="Chaplin">Chaplin</button>
+              <button type="button" data-query="The General">The General</button>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-orbit art-orbit-outer"></div>
+            <div class="art-orbit art-orbit-inner"></div>
+            <div class="art-disc">
+              <div class="art-disc-center">▶</div>
+            </div>
+            <span class="art-spark art-spark-one">✳</span>
+            <span class="art-spark art-spark-two">✦</span>
+            <span class="art-caption">A WORLD OF CINEMA<br />WAITING TO BE FOUND</span>
+          </div>
+        </section>
+
+        <section class="catalog" aria-labelledby="catalog-title">
+          <div class="catalog-head">
+            <div>
+              <p class="section-kicker">THE COLLECTION</p>
+              <h2 id="catalog-title">发现影片</h2>
+            </div>
+            <p class="catalog-caption">在线浏览情况以来源页面为准</p>
+          </div>
+
+          <div class="filters" role="group" aria-label="按来源筛选">
+            <button class="filter is-active" type="button" data-source="all" aria-pressed="true">全部来源</button>
+            <button class="filter" type="button" data-source="archive" aria-pressed="false">互联网档案馆</button>
+            <button class="filter" type="button" data-source="loc" aria-pressed="false">美国国会图书馆</button>
+          </div>
+
+          <div class="result-meta">
+            <p id="result-summary" role="status" aria-live="polite">正在查找公开影片…</p>
+          </div>
+          <div id="notice" class="notice" role="alert" hidden></div>
+          <div id="results" class="movie-grid" aria-label="影片搜索结果"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <span aria-hidden="true">◎</span>
+            <h3>暂时没有找到匹配的影片</h3>
+            <p>试试英文片名、导演姓名，或切换来源。</p>
+          </div>
+          <div class="load-more-wrap">
+            <button id="load-more" class="load-more" type="button" hidden>加载更多影片 <span aria-hidden="true">↓</span></button>
+          </div>
+        </section>
+
+        <section class="about" aria-labelledby="about-title">
+          <div>
+            <p class="section-kicker">ABOUT THE SOURCES</p>
+            <h2 id="about-title">影片从哪里来？</h2>
+          </div>
+          <div class="about-grid">
+            <article>
+              <span class="source-number">01 / INTERNET ARCHIVE</span>
+              <h3>互联网档案馆</h3>
+              <p>搜索 Feature Films 馆藏中的公开影片。每张卡片都通往档案馆的原始条目。</p>
+              <a href="https://archive.org/details/feature_films" target="_blank" rel="noopener noreferrer">了解馆藏 <span aria-hidden="true">↗</span></a>
+            </article>
+            <article>
+              <span class="source-number">02 / LIBRARY OF CONGRESS</span>
+              <h3>美国国会图书馆</h3>
+              <p>搜索 National Screening Room 中标记为在线影像的馆藏，并直达官方条目。</p>
+              <a href="https://www.loc.gov/collections/national-screening-room/" target="_blank" rel="noopener noreferrer">了解馆藏 <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>光影拾遗</span>
+        <p>仅展示来源站点的公开目录；播放、地区可用性及使用权限请以原站说明为准。</p>
+      </footer>
+    </div>
+  </body>
+</html>
